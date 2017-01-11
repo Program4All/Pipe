@@ -1,113 +1,105 @@
 <template>
   <div id="app">
-
     <div class="layout">
-      <div class="layout-header-row">
+
+      <div class="layout-head">
         <x-header></x-header>
       </div>
 
-      <div class="layout-content-row">
-        <div class="layout-slider-column">
-          <x-slider :buttons="buttons"></x-slider>
-        </div>
-        <div class="layout-content-column">
-          <x-content>
-            <router-view :config.sync="config"></router-view>
-          </x-content>
-        </div>
-      </div>
-    </div>
+      <div class="layout-content">
 
+        <div class="layout-left">
+        </div>
+        <div class="layout-right">
+          <div class="layout-right-toolbox">
+          </div>
+          <div class="layout-right-console">
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
   </div>
 </template>
 
 <script>
   import XHeader from 'components/XHeader.vue'
-  import XSlider from 'components/XSlider.vue'
-  import XContent from 'components/XContent.vue'
-
-  const __default__ = {
-    aaa: 'bbb',
-    ccc: 'ddd',
-    eee: 100,
-    aaa: true
-  }
 
   export default {
     name: 'app',
-    components: {XHeader, XSlider, XContent},
     data(){
       return {
-        buttons: [
-          {name: '监控', link: '/index'},
-          {name: '设置', link: '/settings'},
-          {name: '关于', link: '/about'}
-        ],
-//        config: JSON.parse(localStorage['config'] || 'null') || _default
-        config: __default__
+        msg: 'hello'
       }
     },
-    watch: {
-      config(){
-        console.log('config changed')
-//        localStorage['config'] = JSON.stringify(this.config)
-      }
-    }
+    components: {XHeader}
   }
-
 </script>
 
 <style lang="less">
 
   @import 'assets/color.less';
-  @import 'assets/layout.less';
 
-  html, body, #app{
-    padding:0;
-    margin:0;
-    height: @client-height;
-    width: @client-width;
-    overflow: auto;
+  html, body, #app {
+    margin: 0;
+  .x-header {
+    width: 100%;
+    height: 100%;
   }
-
-  html {
-    overflow: hidden;
+    padding: 0;
+    width: 100%;
+    height: 100%;
   }
 
   .layout {
-    height: @client-height;
-    width: @client-width;
-    overflow: auto;
+    width: 100%;
+    height: 100%;
 
-    .layout-header-row {
-      width: @client-width;
-      height: @header-height;
+    .layout-head {
+      width: 100%;
+      height: 9%;
+      background-color: @silver;
+      overflow: hidden;
     }
 
-    .layout-content-row {
-      width: @client-width;
-      height: @content-height;
-      clear: both;
+    .layout-content {
+      width: 100%;
+      height: 91%;
+      overflow: hidden;
 
-      div {
+      .layout-left {
+        width: 61.8%;
+        height: 100%;
         float: left;
+        background-color: @dark-white;
+        overflow: hidden;
       }
 
-      .layout-slider-column {
-        height: @content-height;
-        width: @slider-width;
+      .layout-right {
+        width: 38.2%;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+
+        .layout-right-toolbox {
+          width: 100%;
+          height: 61.8%;
+          background-color: @extra-light-gray;
+          overflow: hidden;
+        }
+
+        .layout-right-console {
+          width: 100%;
+          height: 38.2%;
+          background-color: @light-black;
+          overflow: hidden;
+        }
+
       }
 
-      .layout-content-column {
-        height: @content-height;
-        width: @content-width;
-      }
     }
+
   }
-
-
-  /*#app {*/
-    /*-webkit-app-region: drag;*/
-  /*}*/
-
 </style>
