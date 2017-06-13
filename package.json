@@ -8,7 +8,7 @@
     "dev": "node build/dev-nw.js & node build/dev-server.js",
     "start": "npm dev",
     "build": "node build/build.js && node build/build-nw.js",
-    "build-devtools": "git clone https://github.com/vuejs/vue-devtools.git && cd vue-devtools && npm install && npm run build"
+    "build-devtools": "git clone https://github.com/vuejs/vue-devtools.git && cd vue-devtools && git checkout v3.1.0 && npm install && npm run build"
   },
   "dependencies": {
     "vue": "^2.3.3",
