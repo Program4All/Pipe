@@ -1,5 +1,7 @@
 # nwjs-vue
 
+修复 vue-devtools 不能使用的 bug. https://github.com/vuejs/vue-devtools/issues/249
+
 > A Vue.js project
 
 ## Build Setup
