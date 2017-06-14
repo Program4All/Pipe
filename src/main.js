@@ -1,4 +1,8 @@
 import Vue from 'vue'
+
+// hook global Vue
+window.Vue = Vue
+
 import App from './App'
 import router from './router'
 
