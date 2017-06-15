@@ -7,11 +7,8 @@ const NwBuilder = require('nw-builder')
 const config = require('../config/')
 const nwconfig = require('../config/nw').dev
 const nwmanifest = Object.assign({}, require('../config/nw-manifest'), {
-  main: `http://localhost:${config.dev.port}`,
+  main: `http://localhost:${config.dev.port}/`,
   'node-remote': '<all_urls>',
-  webkit: {
-    plugin: true
-  }
 }) 
 
 mkdir('-p', 'tmp/dev/')

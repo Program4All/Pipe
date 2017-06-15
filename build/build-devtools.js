@@ -1,8 +1,9 @@
+const path = require('path')
 const fs = require('fs')
-const manifest = require('./vue-devtools/shells/chrome/manifest.json')
+const manifest = require('../vue-devtools/shells/chrome/manifest.json')
 
 fs.writeFileSync(
-  'vue-devtools/shells/chrome/manifest.json',
+  path.join(__dirname, '../vue-devtools/shells/chrome/manifest.json'),
   JSON.stringify(Object.assign({}, manifest, {
     "permissions": [
       "http://*/*",
