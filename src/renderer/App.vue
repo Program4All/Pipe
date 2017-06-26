@@ -1,15 +1,23 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <x-header></x-header>
+    <!--<router-view></router-view>-->
   </div>
 </template>
 
 <script>
+import XHeader from './components/Header'
   export default {
-    name: 'pipe'
+    components:{XHeader}
   }
 </script>
 
 <style>
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
   /* CSS */
 </style>
